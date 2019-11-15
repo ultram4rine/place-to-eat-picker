@@ -1,0 +1,23 @@
+{
+  "name": "place-to-eat-picker",
+  "version": "1.0.0",
+  "description": "Pick a place to eat today",
+  "author": {
+    "name": "ultram4rine"
+  },
+  "homepage": "https://github.com/ultram4rine/place-to-eat-picker",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ultram4rine/place-to-eat-picker"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "jshint": "^2.10.3"
+  }
+}
