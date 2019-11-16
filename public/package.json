@@ -1,0 +1,12 @@
+{
+  "name": "place-to-eat-picker-front",
+  "version": "1.0.0",
+  "description": "Front part of place-to-eat-picker",
+  "author": {
+    "name": "ultram4rine"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
+}
