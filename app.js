@@ -1,14 +1,16 @@
-const http = require("http");
-const fs = require("fs");
+const express = require("express");
+const path = require("path");
 
-http
-  .createServer(function(_req, res) {
-    fs.readFile("templates/index.html", "utf8", function(_error, data) {
-      data = data.replace("{ start }", "start");
+const config = require("./config/Config");
+const routes = require("./routes/Routes");
 
-      res.end(data);
-    });
-  })
-  .listen(6009, "localhost", function() {
-    console.log("Server listening on :6009 port.");
-  });
+const app = express();
+
+app.use(express.json());
+app.use(express.static(path.join(__dirname, "public")));
+
+app.use("/", routes);
+
+app.listen(config.APP_PORT);
+
+module.exports = app;
