@@ -4,17 +4,33 @@
 <head>
     <title>Place to eat Picker</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="/public/css/main.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <script type="text/javascript" src="/node_modules/vue/dist/vue.min.js"></script>
+    <script type="text/javascript" src="/node_modules/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="wheel-wrapper">
-            <div class="wheel-pointer">
-                { start }
+    <span id="app">
+        <div class="container">
+            <div class="wheel-wrapper">
+                <div class="wheel-pointer" @click="onClickRotate">
+                    Pick
+                </div>
+                <div class="wheel-bg" :class="{freeze: freeze}" :style="`transform: rotate(${wheelDeg}deg)`">
+                    <div class="places-list">
+                        <div class="place-wrapper" v-for="(place, index) in placesList" :key="index">
+                            <div class="place" :style="`transform: rotate(${(360 / places.length) * index}deg)`">
+                                <div class="place-name">
+                                    {{ place.name }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </span>
+    <script type="module" ty src="/js/main.js"></script>
 </body>
 
 </html>
