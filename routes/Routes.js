@@ -11,7 +11,8 @@ app.get("/", (_req, res) => {
 
 app.get("/getplaces", (_req, res) => {
   fs.readFile("places.json", "utf-8", function(_error, data) {
-    res.end(data);
+    let JSONdata = JSON.parse(data);
+    res.json(JSONdata);
   });
 });
 
