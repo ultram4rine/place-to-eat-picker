@@ -61,5 +61,10 @@ body {
 .place {
   width: 100%;
   height: 100%;
+  line-height: 120px;
   transform-origin: bottom;
+}
+.place-name {
+  transform-origin: center;
+  transform: rotate(-90deg);
 }
